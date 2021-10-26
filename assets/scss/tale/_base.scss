@@ -17,7 +17,7 @@ html {
   overflow-y: scroll;
 
   @media (min-width: 600px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -64,4 +64,24 @@ img {
 
 td {
   vertical-align: top;
+}
+
+@media (prefers-color-scheme: dark) {
+  html,body {
+    background-color: #333;
+    color: $dark-default-color;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $dark-default-shade;
+  }
+
+  blockquote {
+    color: $grey-1;
+  }
 }

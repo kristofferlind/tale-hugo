@@ -42,3 +42,19 @@
     right: 0;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .pagination {
+    span {
+      color: $dark-default-shade;
+    }
+
+    .top {
+      color: $dark-default-color;
+    }
+
+    .arrow {
+      color: $dark-default-color;
+    }
+  }
+}
