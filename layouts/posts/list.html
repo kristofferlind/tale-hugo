@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<main>
+	<div class="catalogue archive">
+    <h1>{{ .Title }}</h1>
+    {{- if .Pages -}}
+      {{- $pages := .Pages.GroupByDate "2006" -}}
+      {{- range $pages -}}
+        <h3>{{- .Key -}}</h3>
+        {{- range .Pages -}}
+          <article>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="date">{{ .Date.Format "01-02" }}</span>
+          </article>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  </div>
+  {{ partial "pagination" . }}
+</main>
+{{ end }}

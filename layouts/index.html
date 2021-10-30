@@ -1,10 +1,10 @@
 {{ define "main" }}
-
 <main>
 	{{ partial "index/introduction.html" . }}
 
 	<div class="catalogue">
-		{{ range (.Paginate .Site.RegularPages).Pages }}
+    {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+		{{ range (.Paginate $pages).Pages }}
 			{{ .Render "summary" }}
 		{{ end }}
 	</div>

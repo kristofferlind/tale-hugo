@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <main>
-    <h1>{{ strings.FirstUpper .Data.Singular }} {{ .Title }}</h1>
+  <h2>{{ strings.FirstUpper .Data.Singular }}: {{ .Title }}</h2>
 	<div class="catalogue">
 		{{ range (.Paginate .Pages).Pages }}
 			{{ .Render "summary" }}

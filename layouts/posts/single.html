@@ -2,6 +2,7 @@
 
 <main>
 	<div class="post">
+		{{ partial "single/post-info.html" . }}
 		{{ partial "single/title.html" . }}
 
 		{{ partial "single/header.html" . }}
@@ -11,9 +12,7 @@
 		{{ partial "single/footer.html" . }}
 	</div>
 
-	<div class="pagination">
-		<a href="#" class="top">Top</a>
-	</div>
+  {{ partial "pagination" . }}
 </main>
 
 {{ end }}

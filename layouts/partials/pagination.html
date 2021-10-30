@@ -1,12 +1,17 @@
 <div class="pagination">
-  {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
+  {{ if .Paginator }}
+    {{ if.Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
+    {{ end }}
   {{ end }}
-  {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
-  {{ end }}
+		<a href="#" class="top">Top</a>
+  {{ if .Paginator }}
+    {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
+    {{ end }}
 
-  {{ if gt .Paginator.TotalPages 1 }}
-  <span>{{ .Paginator.PageNumber }}</span>
+    {{ if gt .Paginator.TotalPages 1 }}
+    <span>{{ .Paginator.PageNumber }}</span>
+    {{ end }}
   {{ end }}
 </div>

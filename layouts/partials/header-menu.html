@@ -1,12 +1,27 @@
 <ul>
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-        <li>
-            <a href="{{ .URL }}">
-                {{ .Pre }}
-                <span>{{ .Name }}</span>
-                {{ .Post }}
-            </a>
-        </li>
-    {{ end }}
+  <!-- <li>
+    <a href="/posts/">
+      <span>Posts</span>
+    </a>
+  </li> -->
+  <!-- <li>
+    <a href="/categories/">
+      <span>Categories</span>
+    </a>
+  </li>
+  <li>
+    <a href="/tags/">
+      <span>Tags</span>
+    </a>
+  </li> -->
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.main }}
+    <li>
+      <a href="{{ .URL }}">
+        {{ .Pre }}
+        <span>{{ .Name }}</span>
+        {{ .Post }}
+      </a>
+    </li>
+  {{ end }}
 </ul>

@@ -1,11 +1,24 @@
-<a href="{{ .Permalink }}" class="catalogue-item">
+<div class="catalogue-item">
+  <a href="{{ .Permalink }}" class="entry">
     <div>
-        <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
-        <h2 class="catalogue-title">{{ .Title }}</h2>
-        <div class="catalogue-line"></div>
-
-        <p>
-            {{ if isset .Params "summary" }}{{ .Params.Summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}
-        </p>
+      <time datetime="{{ .PublishDate }}" class="catalogue-time">{{ i18n "publishdate" . }}</time>
+      <h2 class="catalogue-title">{{ .Title }}</h2>
+      <div class="catalogue-line"></div>
+      <p>
+          {{ if isset .Params "summary" }}
+            {{ .Params.Summary | markdownify }}
+          {{ else }}
+            {{ .Summary }}
+          {{ end }}
+      </p>
     </div>
-</a>
+  </a>
+
+  <div class="tags">
+    {{- range $index, $value := .Params.tags -}}
+      {{- if gt $index 0 }},&nbsp;{{ end -}}
+      {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+      <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
+    {{- end -}}
+  </div>
+</div>

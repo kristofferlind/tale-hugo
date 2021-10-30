@@ -1,5 +1,18 @@
-<!-- 
-This is a placeholder partial for the post footer. Create a file called
-layouts/partials/single/footer.html in your own site to overwrite this
-placeholder.
--->
+<div>
+  <div class="tags">
+    categories:
+    {{ range $index, $value := .Params.categories -}}
+      {{- if gt $index 0 }},&nbsp;{{ end -}}
+      {{- $tag := partialCached "function/path.html" $value $value | printf "/categories/%v" | $.Site.GetPage -}}
+      <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
+    {{- end -}}
+  </div>
+  <div class="tags">
+    tags:
+    {{ range $index, $value := .Params.tags -}}
+      {{- if gt $index 0 }},&nbsp;{{ end -}}
+      {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+      <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
+    {{- end -}}
+  </div>
+</div>
