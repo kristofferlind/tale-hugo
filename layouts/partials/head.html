@@ -14,10 +14,7 @@
 		{{- $cssTarget		:= "css/style.css" }}
 		{{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
 		{{- $style			:= resources.Get "scss/tale.scss" | toCSS $cssOptions }}
-		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
-		{{ range .Site.Params.css -}}
-			<link rel="stylesheet" href="{{ . | relURL }}">
-		{{ end -}}
+    <style>{{ $style.Content | safeCSS }}</style>
 
 		<!-- Favicon -->
 		<link rel="icon" href="favicon.ico" />
