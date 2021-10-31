@@ -27,4 +27,7 @@
 
 		<!-- RSS -->
 		<link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+    {{ $built := resources.Get "js/index.js" | resources.Minify | js.Build (dict "params" (dict "minify" "true")) }}
+    <script async type="text/javascript" src="{{ $built.RelPermalink }}"></script>
 	</head>
