@@ -1,18 +1,21 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Tale"
+name = "Taleish-optimized"
 license = "MIT"
 licenselink = "https://github.com/kristofferlind/tale-hugo/blob/master/LICENSE"
-description = "A port of the Tale theme for Hugo. Tale is a minimal Jekyll theme curated for storytellers."
+description = "Tale, originally by Chester How, ported to Hugo by Emiel Hollander with content restructure and performance/seo optimizations."
 homepage = "https://github.com/kristofferlind/tale-hugo"
-tags = ["minimal", "clean", "responsive", "simple", "personal", "blog", "starter", "light", "typography"]
+tags = ["minimal", "clean", "responsive", "simple", "personal", "blog", "starter", "light"]
 features = ["pagination"]
-min_version = "0.50"
+min_version = "0.88.1"
 
-[author]
-  name = "Emiel Hollander"
-  homepage = "https://www.emielhollander.nl"
+authors = [
+  # content restructure and optimizations
+  { name = "Kristoffer Lind", homepage = "https://www.lind.sh" },
+  # port to Hugo (https://github.com/EmielH/tale-hugo)
+  { name = "Emiel Hollander", homepage = "https://www.emielhollander.nl" }
+]
 
 # If porting an existing theme
 [original]
