@@ -3,7 +3,7 @@
 	{{ partial "index/introduction.html" . }}
 
 	<div class="catalogue">
-    {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+    {{- $pages := where .Site.RegularPages "Type" "blog" -}}
 		{{ range (.Paginate $pages).Pages }}
 			{{ .Render "summary" }}
 		{{ end }}
