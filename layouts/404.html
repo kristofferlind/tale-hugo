@@ -1,8 +1,11 @@
-{{ define "main"}}
-<main id="main">
-  <div>
-   <h1 id="title"><a href="{{ "/" | relURL }}">Go Home</a></h1>
-  </div>
-</main>
-{{ end }}
+{{ define "main" }}
+<main>
+	{{ partial "index/introduction.html" . }}
 
+	<div class="post">
+    <h1>Not found</h1>
+    Sorry we couldn't find the page you're looking for.
+	</div>
+</main>
+
+{{ end }}
