@@ -1,0 +1,13 @@
+{{- $src := .Destination | safeURL }}
+{{- $img := .Page.Resources.GetMatch .Destination -}}
+
+{{- if gt $img.Width 800 }}
+{{- $img = $img.Resize "800x" }}
+{{- end }}
+
+<img
+  alt="{{ $.Text }}"
+  src="{{ $src }}"
+  width={{ $img.Width }}
+  height={{ $img.Height }}
+/>
