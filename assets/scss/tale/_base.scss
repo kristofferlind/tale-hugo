@@ -21,16 +21,13 @@ html {
   }
 }
 
-body {
-  -webkit-text-size-adjust: 100%;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.heading {
   color: $default-shade;
   font-family: $sans-serif;
   line-height: normal;
@@ -60,6 +57,7 @@ img {
   display: block;
   margin: 0 0 1rem;
   max-width: 100%;
+  object-fit: scale-down;
 }
 
 td {
@@ -77,7 +75,8 @@ td {
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .heading {
     color: $dark-default-shade;
   }
 
