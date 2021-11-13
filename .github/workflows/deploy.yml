@@ -1,0 +1,38 @@
+name: deploy
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+permissions:
+  actions: none
+  checks: none
+  contents: write
+  deployments: none
+  issues: none
+  packages: none
+  pull-requests: none
+  repository-projects: none
+  security-events: none
+  statuses: none
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+        fetch-depth: 0
+
+    - name: Install prerequisites
+      run: ./themes/tale/scripts/install-prerequisites.sh
+
+    # Need to allow some customization to use build script
+    - name: Build
+      run: hugo --minify --destination ../public --source ./exampleSite --themesDir ../.. --baseURL https://kristofferlind.github.io/hugo-tale
+
+    - name: Deploy
+      run: ./scripts/deploy.sh
