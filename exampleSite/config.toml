@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'hugo-tale'
 
 # Theme settings
-theme = "tale"
+theme = "hugo-tale"
 
 [params]
   Author = "Some author"

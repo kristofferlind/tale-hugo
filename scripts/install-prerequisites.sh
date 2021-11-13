@@ -18,3 +18,5 @@ if ! hash hugo 2>/dev/null || ! hugo version | grep -q "$HUGO_VERSION"; then
   rm -rf $TEMP_PATH
   rm hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 fi
+
+hugo version
