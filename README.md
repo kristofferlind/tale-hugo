@@ -2,8 +2,6 @@
 
 This theme was designed by Chester How, ported to hugo by Emiel Hollander. This fork includes some restructuring to work the way I want it to and some performance improvements.
 
-![Tale screenshot](https://raw.githubusercontent.com/EmielH/tale-hugo/master/images/screenshot.png)
-
 Demo (/exampleSite): (https://www.lind.sh/tale-hugo/)
 
 ## Installation
@@ -37,10 +35,8 @@ Check /exampleSite for example of content structure
 
 Thanks
 
-- to [Emiel Hollander](//github.com/EmielH) for porting to Hugo
-- to [Chester How](//github.com/chesterhow) for creating the original [Tale theme for Jekyll](https://chesterhow.github.io/tale/),
-- to [onedrawingperday](//github.com/onedrawingperday), [bep](//github.com/bep) and [digitalcraftsman](//github.com/digitalcraftsman) for their help in getting the theme working correctly with Hugo,
-- to [lucperkins](https://github.com/lucperkins) for the [Fresh theme](https://github.com/lucperkins/hugo-fresh) from which I used some useful snippets of code.
+- to [Emiel Hollander](//github.com/EmielH) for porting to Hugo ([onedrawingperday](//github.com/onedrawingperday), [bep](//github.com/bep) and [digitalcraftsman](//github.com/digitalcraftsman) for their help in getting the theme working correctly with Hugo and [lucperkins](https://github.com/lucperkins) for the [Fresh theme](https://github.com/lucperkins/hugo-fresh) from which I some useful snippets of code were used)
+- to [Chester How](//github.com/chesterhow) for creating the original [Tale theme for Jekyll](https://chesterhow.github.io/tale/)
 
 ## License
 See [LICENSE](https://github.com/kristofferlind/tale-hugo/blob/master/LICENSE).
