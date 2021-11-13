@@ -1,9 +1,9 @@
 baseURL = 'https://kristofferlind.github.io/hugo-tale'
 languageCode = 'en-us'
-title = 'hugo-tale'
+title = 'tale-hugo'
 
 # Theme settings
-theme = "hugo-tale"
+theme = "tale-hugo"
 
 [params]
   Author = "Some author"
