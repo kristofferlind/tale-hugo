@@ -28,7 +28,7 @@ jobs:
         fetch-depth: 0
 
     - name: Install prerequisites
-      run: ./themes/tale/scripts/install-prerequisites.sh
+      run: ./scripts/install-prerequisites.sh
 
     # Need to allow some customization to use build script
     - name: Build
