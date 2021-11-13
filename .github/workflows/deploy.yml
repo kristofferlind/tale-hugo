@@ -32,7 +32,7 @@ jobs:
 
     # Need to allow some customization to use build script
     - name: Build
-      run: hugo --minify --destination ../public --source ./exampleSite --themesDir ../.. --baseURL https://kristofferlind.github.io/hugo-tale
+      run: hugo --minify --destination ../public --source ./exampleSite --themesDir ../.. --baseURL https://www.lind.sh/tale-hugo
 
     - name: Deploy
       run: ./scripts/deploy.sh
