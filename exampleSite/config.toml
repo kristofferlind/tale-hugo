@@ -1,0 +1,11 @@
+baseURL = 'https://kristofferlind.github.io/hugo-tale'
+languageCode = 'en-us'
+title = 'hugo-tale'
+
+# Theme settings
+theme = "tale"
+
+[params]
+  Author = "Some author"
+  Description = "Example description"
+  EnablePreviewFeatures = false
