@@ -20,3 +20,4 @@ if ! hash hugo 2>/dev/null || ! hugo version | grep -q "$HUGO_VERSION"; then
 fi
 
 hugo version
+pwd

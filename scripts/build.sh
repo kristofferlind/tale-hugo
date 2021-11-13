@@ -1,6 +1,5 @@
 #! /bin/bash
-set -eux
+set -eu
 
-echo "$(pwd)"
 rm -rf ./public
 hugo --minify
