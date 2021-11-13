@@ -13,6 +13,8 @@ echo "$DEFAULT_REPO_URL"
 REPO_URL="${DEPLOY_REPO_URL:-$DEFAULT_REPO_URL}"
 BUILD_PATH="${DEPLOY_BUILD_PATH:-$DEFAULT_BUILD_PATH}"
 
+env
+
 if [ -n "$GITHUB_TOKEN" ]; then
   REPO_URL=${REPO_URL/github.com/"x-access-token:$GITHUB_TOKEN@github.com"}
   echo "$REPO_URL"
