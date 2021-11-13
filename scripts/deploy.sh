@@ -1,6 +1,6 @@
 #! /bin/bash
 
-set -eux
+set -eu
 
 # executed from root, ./scripts/deploy.sh (check pipeline for example)
 
@@ -13,10 +13,15 @@ echo "$DEFAULT_REPO_URL"
 REPO_URL="${DEPLOY_REPO_URL:-$DEFAULT_REPO_URL}"
 BUILD_PATH="${DEPLOY_BUILD_PATH:-$DEFAULT_BUILD_PATH}"
 
+if [ -n "$GITHUB_TOKEN" ]; then
+  REPO_URL=${REPO_URL/github.com/"x-access-token:$GITHUB_TOKEN@github.com"}
+  echo "$REPO_URL"
+fi
+
 cd $BUILD_PATH
 git init .
 git remote add deploy-repo $REPO_URL
-git checkout -b gh-pages
+git checkout --orphan gh-pages
 git add -A
 
 IS_GITHUB_REPO=$(echo "$REPO_URL" | grep -c "github.com")
