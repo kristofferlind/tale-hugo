@@ -21,7 +21,7 @@ git add -A
 
 IS_GITHUB_REPO=$(echo "$REPO_URL" | grep -c "github.com")
 
-if [[ $IS_GITHUB_REPO ]]; then
+if [[ $IS_GITHUB_REPO && -f "$ROOT_DIR/config.toml" ]]; then
   echo `cat $ROOT_DIR/config.toml | grep "baseURL" | cut -d "=" -f 2`
   BASE_URL=$(cat $ROOT_DIR/config.toml | grep "baseURL" | cut -d "=" -f 2 | tr -d "' ")
 
@@ -32,6 +32,14 @@ if [[ $IS_GITHUB_REPO ]]; then
   # cut last slash and write CNAME file
   echo "$BASE_URL" | rev | cut -c 2- | rev > CNAME
   cat CNAME
+fi
+
+if [ -z "$(git config user.email)" ]; then
+  git config user.email "deployer"
+fi
+
+if [ -z "$(git config user.name)" ]; then
+  git config user.name "Deployer"
 fi
 
 git commit -m "Deploy"
