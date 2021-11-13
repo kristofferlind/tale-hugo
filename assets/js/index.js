@@ -34,7 +34,7 @@ function setup(element) {
   let hint;
 
   function createPrefetchHint() {
-    let href = element.getAttribute('href')
+    const href = element.getAttribute('href')
     if (!existingHints.includes(href)) {
       hint = document.createElement('link');
       hint.setAttribute('rel', 'prefetch');
@@ -51,9 +51,12 @@ function setup(element) {
     }
   }
 
-  let isInternalLink = element.href.includes(window.location.host);
+  const isInternalLink = element.href.includes(window.location.host);
+  const currentPage = window.location.origin + window.location.pathname;
+  const cleanLink = element.href.replace(/#[a-zA-Z0-9_-]*/, '');
+  const isOtherPage = currentPage != cleanLink;
 
-  if (isInternalLink) {
+  if (isInternalLink && isOtherPage) {
     onClickIntent(element, 150, createPrefetchHint);
     onClickIntent(element, 1000, createPrerenderHint);
   }
