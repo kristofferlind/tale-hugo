@@ -40,11 +40,11 @@ if [[ $IS_GITHUB_REPO && -f "$ROOT_DIR/config.toml" ]]; then
 fi
 
 if [ -z "$(git config user.email)" ]; then
-  git config user.email "deployer"
+  git config user.email "${GITHUB_ACTOR:-deployer}"
 fi
 
 if [ -z "$(git config user.name)" ]; then
-  git config user.name "Deployer"
+  git config user.name "${GITHUB_ACTOR:-deployer}"
 fi
 
 git commit -m "Deploy"
