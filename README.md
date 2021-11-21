@@ -35,7 +35,7 @@ Check /exampleSite for example of content structure
 
 Thanks
 
-- to [Emiel Hollander](//github.com/EmielH) for porting to Hugo ([onedrawingperday](//github.com/onedrawingperday), [bep](//github.com/bep) and [digitalcraftsman](//github.com/digitalcraftsman) for their help in getting the theme working correctly with Hugo and [lucperkins](https://github.com/lucperkins) for the [Fresh theme](https://github.com/lucperkins/hugo-fresh) from which I some useful snippets of code were used)
+- to [Emiel Hollander](//github.com/EmielH) for porting to Hugo (with help from: [onedrawingperday](//github.com/onedrawingperday), [bep](//github.com/bep), [digitalcraftsman](//github.com/digitalcraftsman) and [lucperkins](https://github.com/lucperkins)
 - to [Chester How](//github.com/chesterhow) for creating the original [Tale theme for Jekyll](https://chesterhow.github.io/tale/)
 
 ## License
