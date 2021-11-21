@@ -11,6 +11,7 @@ BIN_PATH="/usr/local/bin"
 
 mkdir -p $TEMP_PATH
 
+# install hugo
 if ! hash hugo 2>/dev/null || ! hugo version | grep -q "$HUGO_VERSION"; then
   curl -LO https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
   tar -C $TEMP_PATH -xzf hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
@@ -19,5 +20,9 @@ if ! hash hugo 2>/dev/null || ! hugo version | grep -q "$HUGO_VERSION"; then
   rm hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 fi
 
+# install brotli
+sudo apt install brotli -y
+
+# check installations
 hugo version
-pwd
+brotli --version
