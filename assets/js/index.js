@@ -1,5 +1,5 @@
 function onClickIntent(element, hoverTime, callback) {
-  let isCancelled, timer;
+  let timer;
 
   function disable() {
     element.removeEventListener('mouseover', start);
@@ -7,10 +7,8 @@ function onClickIntent(element, hoverTime, callback) {
   }
 
   function fire() {
-    if (!isCancelled) {
-      callback(element);
-      disable();
-    }
+    callback(element);
+    disable();
   }
 
   function cancel() {
@@ -19,7 +17,6 @@ function onClickIntent(element, hoverTime, callback) {
   }
 
   function start() {
-    isCancelled = false;
     timer = setTimeout(fire, hoverTime);
   }
 
