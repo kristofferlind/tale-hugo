@@ -48,5 +48,5 @@ if [ -z "$(git config user.name)" ]; then
 fi
 
 git commit -m "Deploy"
-git push deploy-repo --force
+git push --set-upstream deploy-repo gh-pages --force
 rm -rf .git
